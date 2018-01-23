@@ -1,7 +1,7 @@
 const assert = require('assert')
 const RomanNumeral = require('../lib/roman-numerals')
 
-describe("Old Roman Numeral methods", function() {
+describe("convertToOldRoman", function() {
   context("given an arabic number with a direct translation to a single roman numeral", function() {
     it("returns the old roman numeral equivalent", function() {
       assert.equal(RomanNumeral.convertToOldRoman(1000),"M")
@@ -20,6 +20,19 @@ describe("Old Roman Numeral methods", function() {
       assert.equal(RomanNumeral.convertToOldRoman(9),"VIIII")
       assert.equal(RomanNumeral.convertToOldRoman(99),"LXXXXVIIII")
       assert.equal(RomanNumeral.convertToOldRoman(2990),"MMDCCCCLXXXX")
+    })
+  })
+})
+
+describe("convertToNewRoman", function() {
+  context("given arabic numbers 4, 5, 9, 10, 99, 100", function () {
+    it("returns the new roman numeral equivalent", function() {
+      assert.equal(RomanNumeral.convertToNewRoman(4),"IV")
+      assert.equal(RomanNumeral.convertToNewRoman(5),"V")
+      assert.equal(RomanNumeral.convertToNewRoman(9),"IX")
+      assert.equal(RomanNumeral.convertToNewRoman(10),"X")
+      assert.equal(RomanNumeral.convertToNewRoman(99),"XCIX")
+      assert.equal(RomanNumeral.convertToNewRoman(100),"C")
     })
   })
 })
